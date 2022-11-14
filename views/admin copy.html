@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+https://www.w3schools.com/w3css/4/w3.css<html>
+<head>
+<title>admin | page</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+
+:root {
+  --col1: #00FF11;
+  --col2: #004CFF;
+  --col3: #ff0000;
+  --col4: #ffffff;
+}
+
+.button {
+  border: none;
+  color: white;
+  width:22.49%;
+  padding: 32px 128px;
+  text-align: center;
+  align-items: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.5s;
+  cursor: pointer;
+}
+
+/* reg buttons */
+.button1 {
+  background-color: rgb(0, 0, 0); 
+  color: rgb(255, 255, 255); 
+  border: 2px solid #4CAF50;
+}
+.button1:hover {
+  background-color: #4CAF50;
+  color: rgb(0, 0, 0);
+}
+.button2 {
+  background-color: rgb(0, 0, 0); 
+  color: rgb(255, 255, 255); 
+  border: 2px solid #0084ff;
+}
+.button2:hover {
+  background-color: #0084ff;
+  color: rgb(0, 0, 0);
+}
+.button3 {
+  background-color: rgb(0, 0, 0); 
+  color: rgb(255, 255, 255); 
+  border: 2px solid #ff0000;
+}
+.button3:hover {
+  background-color: #ff0000;
+  color: rgb(0, 0, 0);
+}
+.button4 {
+  background-color: rgb(0, 0, 0); 
+  color: rgb(255, 255, 255); 
+  border: 2px solid #ffffff;
+}
+.button4:hover {
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+}
+
+/* changing buttons */
+
+.button11 {
+  background-color: rgb(0, 0, 0); 
+  color: rgb(255, 255, 255); 
+  border: 2px solid var(--col1);
+}
+.button11:hover {
+  background-color: var(--col1);
+  color: rgb(0, 0, 0);
+}
+.button22 {
+  background-color: rgb(0, 0, 0); 
+  color: rgb(255, 255, 255); 
+  border: 2px solid var(--col2);
+}
+.button22:hover {
+  background-color: var(--col2);
+  color: rgb(0, 0, 0);
+}
+.button33 {
+  background-color: rgb(0, 0, 0); 
+  color: rgb(255, 255, 255); 
+  border: 2px solid var(--col3);
+}
+.button33:hover {
+  background-color: var(--col3);
+  color: rgb(0, 0, 0);
+}
+.button44 {
+  background-color: rgb(0, 0, 0); 
+  color: rgb(255, 255, 255); 
+  border: 2px solid var(--col4);
+}
+.button44:hover {
+  background-color: var(--col4);
+  color: rgb(0, 0, 0);
+}
+
+.function {
+  border: none;
+  color: white;
+  width:32.5%;
+  padding: 16px 165px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.5s;
+  cursor: pointer;
+}
+.function1 {
+  background-color: rgb(0, 0, 0); 
+  color: rgb(255, 255, 255); 
+  border: 2px solid #ffffff;
+}
+.function1:hover {
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+}
+
+.extra {
+  border: none;
+  color: white;
+  width:32.5%;
+  padding: 64px 165px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.5s;
+  cursor: pointer;
+}
+.extra1 {
+  background-color: rgb(0, 0, 0); 
+  color: rgb(255, 255, 255); 
+  border: 2px solid #ffffff;
+}
+.extra1:hover {
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+}
+
+
+
+
+body,h1,h2,h3,h4,h5,h6 {font-family: 'Courier New', monospace; color:#ffffff;}
+.w3-bar,button {font-family: 'Lucida Console', monospace}
+h1 {font-family: 'copperplate', fantasy}
+.fa-plane,.fa-user {font-size:200px}
+.hide {
+  display: none;
+}
+.myDIV:hover + .hide {
+  display: block;
+  color: rgb(1, 0, 0);
+  font-family: "Montserrat", sans-serif;
+}
+
+input[type=text], input[type=password], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=button], input[type=reset]{
+  width: 45%;
+  background-color: rgb(152, 248, 235);
+  color: black;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=reset]:hover {
+  background-color: rgb(93, 247, 226);
+}
+input[type=button]:hover {
+  background-color: rgb(93, 247, 226);
+}
+
+/* .color_button {
+  width: 23%;
+} */
+
+/* slider styling */
+
+
+
+.slidecontainer {
+  align-content: center;
+  width: 100%;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 25px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background: #5dabff;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  background: #3f58ff;
+  cursor: pointer;
+}
+
+/* change background color */
+
+
+
+
+</style>
+
+
+
+</head>
+
+<script>
+    // Used to toggle the menu on small screens when clicking on the menu button
+    function myFunction() {
+      var x = document.getElementById("navDemo");
+      if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+      } else { 
+        x.className = x.className.replace(" w3-show", "");
+      }
+    }
+    
+</script>
+
+<body>
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-card w3-left-align w3-large" style="background-color: rgb(225, 225, 225)">
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-white" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a onclick = "location.href='index.html'" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Home</a>
+
+  </div>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
+    <a onclick = "location.href='index.html'" class="w3-bar-item w3-button w3-padding-large">Home</a>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="w3-container w3-center" style="padding: 1px; color:black; background-color: rgb(153, 217, 255);">
+  <img src="Bepart LOGO.png" class=" w3-center" alt="Error" width="400px" height="320px">
+
+  <!-- <button class="w3-bar-item w3-button w3-padding-large w3-white">Book<button> -->
+</header>
+
+<body style="background-color:#000000; justify-content: center">
+
+  <h1 id="ttl" style="font-size: 150%;"> Solid Color:</h1>
+
+  <div >
+    <button id = "green_Button" class = "button button1"  onclick = "solidColor('#00FF11');">GREEN</button>
+    <button id = "blue_Button" class = "button button2"  onclick = "solidColor('blue');">BLUE</button>
+    <button id = "red_Button" class = "button button3"  onclick = "solidColor('red');">RED</button>
+    <button id = "white_Button" class = "button button4"  onclick = "solidColor('white');">WHITE</button>
+    <button id = "black_Button" class = "button button4"  style = "width: 95%" onclick = "solidColor('#000000');">Black - Stop Color</button>
+  </div>
+
+
+  <h1 id="ttl" style="font-size: 150%;"> Flickering Color:</h1>
+
+    
+    <!-- <input type="color" id="colorpicker" value="#0000ff"> -->
+    </div>
+
+      <div>
+  <button id = "green_Button" class = "button button1"   onclick = "initColor('#00FF11');">GREEN</button>
+  <button id = "blue_Button" class = "button button2"  onclick = "initColor('blue');">BLUE</button>
+  <button id = "red_Button" class = "button button3"   onclick = "initColor('red');">RED</button>
+  <button id = "white_Button" class = "button button4"   onclick = "initColor('white');">WHITE</button>
+</div>
+
+<h1 id="ttl" style="font-size: 150%;"> Select Frequency:</h1>
+
+
+<div> </br>
+  <div class ="slidercontainer w3-container">
+    <input class="slider" value="1" min="0.01" max="5" oninput="setHertz(this)" type="range" step="0.01">
+  </div>
+    <span class="w3-white">sec: </span>
+    <span class="w3-white" id="sec">1</span>
+</br>
+
+
+<h1 id="ttl" style="font-size: 150%;"> Selected Colors:</h1>
+
+color 1: <span class="w3-white" id="col1">#00FF11</span>
+<input type="color" id="favcolor1" style="height: 35px; width: 100px;" name="favcolor" value="#00FF11" oninput="setCol1(this)">
+color 2: <span class="w3-white" id="col2">#004CFF</span>
+<input type="color" id="favcolor2" style="height: 35px; width: 100px;" name="favcolor" value="#004CFF" oninput="setCol2(this)">
+color 3: <span class="w3-white" id="col3">#ff0000</span>
+<input type="color" id="favcolor3" style="height: 35px; width: 100px;" name="favcolor" value="#ff0000" oninput="setCol3(this)">
+color 4: <span class="w3-white" id="col4">#ffffff</span>
+<input type="color" id="favcolor4" style="height: 35px; width: 100px;" name="favcolor" value="#ffffff" oninput="setCol4(this)">
+
+
+<button id = "black_Button" class = "button button4"  style = "width: 95%" onclick = "solidColor('#000000');">Black - Stop Color</button>
+
+
+
+<h1 id="ttl" style="font-size: 150%;"> Solid Colors:</h1>
+
+
+<div >
+  <button id = "color1" class = "button button11"  onclick = "solidColor(document.getElementById('col1').innerText);">Color 1</button>
+  <button id = "color2" class = "button button22"  onclick = "solidColor(document.getElementById('col2').innerText);">Color 2</button>
+  <button id = "color3" class = "button button33"  onclick = "solidColor(document.getElementById('col3').innerText);">Color 3</button>
+  <button id = "color4" class = "button button44"  onclick = "solidColor(document.getElementById('col4').innerText);">Color 4</button>
+</div>
+
+<h1 id="ttl" style="font-size: 150%;"> Flickering Colors:</h1>
+
+<div >
+  <button id = "colors12" class = "button button4"  style = "width: 47%" onclick = "twoColor(document.getElementById('col1').innerText, document.getElementById('col2').innerText);">Colors 1+2</button>
+  <button id = "colors34" class = "button button4"  style = "width: 47%" onclick = "twoColor(document.getElementById('col3').innerText, document.getElementById('col4').innerText);">Colors 3+4</button>
+  <button id = "color1" class = "button button11"  onclick = "initColor(document.getElementById('col1').innerText);">Color 1</button>
+  <button id = "color2" class = "button button22"  onclick = "initColor(document.getElementById('col2').innerText);">Color 2</button>
+  <button id = "color3" class = "button button33"  onclick = "initColor(document.getElementById('col3').innerText);">Color 3</button>
+  <button id = "color4" class = "button button44"  onclick = "initColor(document.getElementById('col4').innerText);">Color 4</button>
+</div>
+
+ <div>
+
+  <select name="songs" id="songs" oninput="setSong(this)">
+    <option value="empty.txt">Select a Song Lyrics</option>
+    <option value="believer.txt">Believer</option>
+    <option value="titanic.txt">Titanic Theme</option>
+    <option value="excuses.txt">שדות של תירוצים // עומר אדם</option>
+
+  </select>
+
+  <button id = "Double Click here" class="extra extra1"  ondblclick = "myFunction();">FLASH</button>
+  <button id = "clear_text" class = "extra extra1"  onclick = "clear_text();">clear</button>
+  <button id = "initiate_lyrics" class="extra extra1"  onclick = "initLyrics();">LYRICS</button>
+
+ </div>
+
+
+ <iframe src="http://localhost:8080/event.html" width="100%" height="500px" style="border:1px solid black;">
+</iframe>
+
+
+
+
+
+ <script src="/socket.io/socket.io.js"></script>
+ <script>
+  // socket io scripts
+   var socket = io();
+   var seconds;
+
+  function initColor (color){
+    // document.getElementById(color + "_Button").innerHTML = "YOU CLICKED ME!";
+    var sec = document.getElementById('sec').innerText+"s";
+    socket.emit('initColor', color, sec);
+  }
+
+  function solidColor (color){
+    // document.getElementById(color + "_Button").innerHTML = "YOU CLICKED ME!";
+    // var sec = document.getElementById('sec').innerText+"s";
+    socket.emit('solidColor', color);
+  }
+
+  function twoColor (color1, color2){
+    // document.getElementById(color + "_Button").innerHTML = "YOU CLICKED ME!";
+    var sec = document.getElementById('sec').innerText+"s";
+    socket.emit('twoColor', color1, color2, sec);
+  }
+
+  function clear_text (){
+    // document.getElementById("clear_text").innerHTML = "YOU CLICKED ME!";
+    // var sec = document.getElementById('sec').innerText+"s";
+    var sec = document.getElementById('sec').innerText+"s";
+    socket.emit('clear', sec);
+  }
+
+  function initLyrics (){
+        // document.getElementById("initiate_lyrics").innerHTML = "YOU CLICKED ME!";
+    var song = document.getElementById("songs").value;
+    socket.emit('initLyrics', song);
+  }
+
+  function setHertz(ele) {
+                var sec = ele.value;
+                document.getElementById('sec').innerText = sec;
+            }
+
+
+
+
+  function setCol1(ele) {
+      // var col1 = document.getElementById("favcolor").value;
+      var col1 = ele.value;
+      document.getElementById('col1').innerText = col1;
+      var r = document.querySelector(':root');
+      r.style.setProperty('--col1', col1);
+  }
+
+  function setCol2(ele) {
+      // var col1 = document.getElementById("favcolor").value;
+      var col1 = ele.value;
+      document.getElementById('col2').innerText = col1;
+      var r = document.querySelector(':root');
+      r.style.setProperty('--col2', col1);
+
+  }
+
+  function setCol3(ele) {
+      // var col1 = document.getElementById("favcolor").value;
+      var col1 = ele.value;
+      document.getElementById('col3').innerText = col1;
+      var r = document.querySelector(':root');
+      r.style.setProperty('--col3', col1);
+  }
+
+  function setCol4(ele) {
+      // var col1 = document.getElementById("favcolor").value;
+      var col1 = ele.value;
+      document.getElementById('col4').innerText = col1;
+      var r = document.querySelector(':root');
+      r.style.setProperty('--col4', col1);
+  }
+
+
+  // function setSong(ele) {
+  //     var sec = ele.value;
+  //     document.getElementById('sec').innerText = sec;
+  // }
+
+ </script>
+
+
+
+</body>
+</html>

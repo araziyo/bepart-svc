@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Be part | Main</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<script defer src="http://localhost:3000/socket.io/socket.io.js"></script>
+<script defer src="script.js"></script>
+
+
+<style>
+
+:root {
+  --flick: #000000;
+  --back: #000000;
+  --hertz: 0s;
+}
+
+body,h1,h2,h3,h4,h5,h6 {font-family: 'Courier New', monospace}
+.w3-bar,button {font-family: 'Lucida Console', monospace}
+h1 {font-family: 'copperplate', fantasy}
+.fa-plane,.fa-user {font-size:200px}
+.hide {
+  display: none;
+}
+
+div {
+display: flex;
+justify-content: center;
+}
+
+.myDIV:hover + .hide {
+  display: block;
+  color: rgb(1, 0, 0);
+  font-family: "Montserrat", sans-serif;
+}
+
+input[type=text], input[type=password], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=button], input[type=reset]{
+  width: 45%;
+  background-color: rgb(152, 248, 235);
+  color: black;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=reset]:hover {
+  background-color: rgb(93, 247, 226);
+}
+input[type=button]:hover {
+  background-color: rgb(93, 247, 226);
+}
+
+#pulser {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background: black;
+                animation-name: pulser;
+                animation-duration: var(--hertz);
+                animation-iteration-count: infinite;
+                animation-direction: alternate;
+            }
+            @keyframes pulser {
+                0%   {background-color: var(--back);}
+                49%   {background-color: var(--back);}
+                50%   {background-color: var(--flick);}
+                100%   {background-color: var(--flick);}
+            }
+
+
+</style>
+</head>
+
+
+<body id = "pulser" style= "text-align:center; color:white;" >
+    <h1 id="ttl" style="font-size: 150%;"></h1>
+
+    <div> 
+
+      <img src="Bepart LOGO.png" alt="logo" width="30%" style="vertical-align:middle;margin: 0px">
+
+    </div>
+
+
+    <!-- <iframe src="http://localhost:8080/lyrics.html" width="100%" height="100%" style="position: fixed; border:1px solid black;">
+    </iframe>  -->
+
+
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+     // socket io scripts
+      var socket = io();
+   
+     socket.on('initColor', function(color, sec) {
+
+
+      // document.getElementById("ttl").innerHTML = " ";
+
+      // document.getElementById("ttl").innerHTML += " </br> initColor: " + color + ", " +sec;
+        // Get the root element
+        var r = document.querySelector(':root');
+
+        // Create a function for setting a variable value
+        function flick_set(flick_color) {
+          // Set the value of variable --blue to another value (in this case "lightblue")
+          r.style.setProperty('--flick', flick_color);
+          r.style.setProperty('--back', '#000000');
+        }
+        flick_set(color);
+
+        function hertz_set(hertz) {
+          // Set the value of variable --blue to another value (in this case "lightblue")
+          r.style.setProperty('--hertz', hertz);
+        }
+        hertz_set(sec);
+     });
+
+     socket.on('twoColor', function(color1, color2, sec) {
+
+
+    // document.getElementById("ttl").innerHTML = " ";
+
+    // document.getElementById("ttl").innerHTML += " </br> initColor: " + color + ", " +sec;
+      // Get the root element
+      var r = document.querySelector(':root');
+
+      // Create a function for setting a variable value
+      function flick_set(color1, color2) {
+        // Set the value of variable --blue to another value (in this case "lightblue")
+        r.style.setProperty('--flick', color1);
+        r.style.setProperty('--back', color2);
+      }
+      flick_set(color1, color2);
+
+      function hertz_set(hertz) {
+        // Set the value of variable --blue to another value (in this case "lightblue")
+        r.style.setProperty('--hertz', hertz);
+      }
+      hertz_set(sec);
+    });
+
+     socket.on('solidColor', function(color) {
+
+
+      // document.getElementById("ttl").innerHTML = " ";
+
+      // document.getElementById("ttl").innerHTML += " </br> initColor: " + color + ", " +sec;
+        // Get the root element
+        var r = document.querySelector(':root');
+
+        // Create a function for setting a variable value
+        function flick_set(flick_color) {
+          // Set the value of variable --blue to another value (in this case "lightblue")
+          r.style.setProperty('--flick', flick_color);
+          r.style.setProperty('--back', flick_color);
+
+        }
+        flick_set(color);
+
+        r.style.setProperty('--hertz', '0.005s');
+       
+     });
+
+
+     socket.on('clear', function() {
+
+      document.getElementById("ttl").innerHTML = " ";
+
+      });
+
+     
+
+     socket.on('initLyrics', function(song, song_file) {
+      // document.getElementById("ttl").innerHTML += " </br> initLyrics: " + song + ", </br>" + song_file;
+      document.getElementById("ttl").innerHTML = song_file;
+      });
+   
+   
+   
+   
+    </script>
+
+
+</body>
+</html>

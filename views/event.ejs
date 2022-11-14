@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Be part | Main</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<script defer src="http://localhost:3000/socket.io/socket.io.js"></script>
+<script defer src="script.js"></script>
+
+
+<script>
+
+
+
+var frequency = 1000;
+
+
+  myInterval = setInterval(pulseColorChange, frequency);
+  
+  
+  var bool = 0;
+  var color1 = 'black';
+  var color2 = 'black';
+  
+  function pulseColorChange() {
+    switch (bool) {
+      case 0:
+        bool = 1;
+        document.body.style.backgroundColor = color1;
+        break;
+        case 1:
+          bool = 0;
+          document.body.style.backgroundColor = color2;
+          break;
+          default:
+            break;
+          }
+  }
+</script>
+
+<style>
+
+body,h1,h2,h3,h4,h5,h6 {font-family: 'Courier New', monospace}
+.w3-bar,button {font-family: 'Lucida Console', monospace}
+h1 {font-family: 'copperplate', fantasy}
+.fa-plane,.fa-user {font-size:200px}
+.hide {
+  display: none;
+}
+
+div {
+display: flex;
+justify-content: center;
+}
+
+.myDIV:hover + .hide {
+  display: block;
+  color: rgb(1, 0, 0);
+  font-family: "Montserrat", sans-serif;
+}
+
+input[type=text], input[type=password], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=button], input[type=reset]{
+  width: 45%;
+  background-color: rgb(152, 248, 235);
+  color: black;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=reset]:hover {
+  background-color: rgb(93, 247, 226);
+}
+input[type=button]:hover {
+  background-color: rgb(93, 247, 226);
+}
+
+</style>
+</head>
+
+
+<body id = "pulser" style= "text-align:center; background-color:black;" >
+    <h1 id="ttl" style="font-size: 150%; color: white;"></h1>
+
+    <div> 
+
+      <img src="Bepart LOGO.png" alt="logo" width="30%" style="vertical-align:middle;margin: 0px">
+
+    </div>
+
+
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+     // socket io scripts
+      var socket = io();
+   
+     socket.on('initColor', function(oneColor, seconds) {
+
+        clearInterval(myInterval);
+        document.body.style.backgroundColor = oneColor;
+        color1 = 'black';
+        color2 = oneColor;
+        myInterval = setInterval(pulseColorChange, seconds);
+
+     });
+
+      socket.on('twoColor', function(twoColor1, twoColor2, seconds) {
+
+        clearInterval(myInterval);
+        document.body.style.backgroundColor = twoColor2;
+        color1 = twoColor1;
+        color2 = twoColor2;
+        myInterval = setInterval(pulseColorChange, seconds);
+        
+      });
+
+     socket.on('solidColor', function(solid_color) {
+
+
+       clearInterval(myInterval);
+      document.body.style.backgroundColor = solid_color;
+
+      color1=solid_color;
+      color2=solid_color;
+      // myInterval = setInterval(pulseColorChange, 10);
+     });
+
+
+     socket.on('clear', function() {
+
+      document.getElementById("ttl").innerHTML = " ";
+
+      });
+
+     socket.on('initLyrics', function(song, song_file) {
+      document.getElementById("ttl").innerHTML = song_file;
+      });
+
+
+    </script>
+</body>
+</html>
